@@ -18,6 +18,7 @@ int main()
     stat.printData();
     cout<<stat.mean()<<endl;
     cout<<stat.median()<<endl;
+    cout<<stat.standardDeviation()<<endl;
 
     return 0;
 }

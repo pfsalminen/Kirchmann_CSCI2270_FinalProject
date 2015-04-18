@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1429395594 source:/home/user/Dropbox/CSCI2270 Data structures/Project/Kirchmann_CSCI2270_FinalProject/Kirchmann_CSCI2270_FinalProject/main.cpp
+1429396617 source:/home/user/Dropbox/CSCI2270 Data structures/Project/Kirchmann_CSCI2270_FinalProject/Kirchmann_CSCI2270_FinalProject/main.cpp
 	<iostream>
 	"statisticsLibrary.h"
 
@@ -7,8 +7,9 @@
 	<vector>
 	<iostream>
 
-1429395562 source:/home/user/Dropbox/CSCI2270 Data structures/Project/Kirchmann_CSCI2270_FinalProject/Kirchmann_CSCI2270_FinalProject/src/statisticsLibrary.cpp
+1429396596 source:/home/user/Dropbox/CSCI2270 Data structures/Project/Kirchmann_CSCI2270_FinalProject/Kirchmann_CSCI2270_FinalProject/src/statisticsLibrary.cpp
 	"vector"
 	<iostream>
+	<math.h>
 	"statisticsLibrary.h"
 
