@@ -9,7 +9,6 @@ class statisticsLibrary
     public:
         vector<float> data;
         statisticsLibrary(int dataSize);
-        statisticsLibrary();
         void randomNumbers(int low_limit,int upper_limit);
         void sortDataMinToMax();
         float mean();
@@ -18,10 +17,11 @@ class statisticsLibrary
         float variance();
         virtual ~statisticsLibrary();
         void printData();
+        void fillRandomData(int n_elements,int minVal,int maxVal);
     protected:
     private:
         void bubbleSort();
-        void selectionSort();
+        void quickSort(float,float);
 
 
 };

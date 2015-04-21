@@ -1,24 +1,21 @@
 #include <iostream>
 #include "statisticsLibrary.h"
 
-//create mean, sort, variance, max, min
-
-//use a vector
 using namespace std;
 
 int main()
 {
-    statisticsLibrary stat(19);
-    for (float i = 0;i<19;i++){
-        stat.data.push_back(i);
-    }
-    for (float i = 0;i<19;i++){
-        stat.data.insert(stat.data.begin()+i,i);
-    }
-    stat.printData();
-    cout<<stat.mean()<<endl;
-    cout<<stat.median()<<endl;
-    cout<<stat.standardDeviation()<<endl;
+    statisticsLibrary stat(1);//initialize a statisticsLibrary object, contains a data vector of size 1
 
+
+
+    //stat.printData();
+    //cout<<stat.mean()<<endl;
+    //cout<<stat.median()<<endl;
+    //cout<<stat.standardDeviation()<<endl;
+    stat.fillRandomData(100,1,100);
+    stat.sortDataMinToMax();
+    stat.printData();
+    //stat.printData();
     return 0;
 }
