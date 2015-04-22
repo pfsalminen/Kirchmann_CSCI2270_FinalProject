@@ -1,16 +1,47 @@
 # depslib dependency file v1.0
-1429583521 source:/home/user/Dropbox/CSCI2270 Data structures/Project/Kirchmann_CSCI2270_FinalProject/Kirchmann_CSCI2270_FinalProject/main.cpp
+1429743314 source:/home/user/Dropbox/CSCI2270 Data structures/Project/Kirchmann_CSCI2270_FinalProject/Kirchmann_CSCI2270_FinalProject/main.cpp
+	<statisticsLibrary.h>
 	<iostream>
-	"statisticsLibrary.h"
+	<mgl2/mgl.h>
 
-1429584502 /home/user/Dropbox/CSCI2270 Data structures/Project/Kirchmann_CSCI2270_FinalProject/Kirchmann_CSCI2270_FinalProject/include/statisticsLibrary.h
+1429743474 /home/user/Dropbox/CSCI2270 Data structures/Project/Kirchmann_CSCI2270_FinalProject/Kirchmann_CSCI2270_FinalProject/include/statisticsLibrary.h
 	<vector>
 	<iostream>
 
-1429584501 source:/home/user/Dropbox/CSCI2270 Data structures/Project/Kirchmann_CSCI2270_FinalProject/Kirchmann_CSCI2270_FinalProject/src/statisticsLibrary.cpp
+1429743504 source:/home/user/Dropbox/CSCI2270 Data structures/Project/Kirchmann_CSCI2270_FinalProject/Kirchmann_CSCI2270_FinalProject/src/statisticsLibrary.cpp
 	"vector"
 	<iostream>
 	<math.h>
 	"statisticsLibrary.h"
 	<time.h>
+	<mgl2/mgl.h>
+
+1429737370 /home/user/Dropbox/CSCI2270 Data structures/Project/Kirchmann_CSCI2270_FinalProject/Kirchmann_CSCI2270_FinalProject/include/gnuplot-iostream.h
+	<cstdio>
+	<termios.h>
+	<unistd.h>
+	<util.h>
+	<pty.h>
+	<fstream>
+	<iostream>
+	<sstream>
+	<stdexcept>
+	<string>
+	<utility>
+	<iomanip>
+	<vector>
+	<complex>
+	<cstdlib>
+	<cmath>
+	<tuple>
+	<boost/iostreams/device/file_descriptor.hpp>
+	<boost/iostreams/stream.hpp>
+	<boost/version.hpp>
+	<boost/utility.hpp>
+	<boost/tuple/tuple.hpp>
+	<boost/mpl/bool.hpp>
+	<boost/filesystem.hpp>
+	<boost/cstdint.hpp>
+	<blitz/array.h>
+	<windows.h>
 

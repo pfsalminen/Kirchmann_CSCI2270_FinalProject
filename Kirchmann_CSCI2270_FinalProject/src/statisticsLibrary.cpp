@@ -3,6 +3,7 @@
 #include<math.h>
 #include "statisticsLibrary.h"
 #include <time.h>
+#include <mgl2/mgl.h>
 using namespace std;
 
 /*
@@ -162,6 +163,74 @@ float statisticsLibrary::median(){
     }
 }
 
+/*
+maxVal()
+Method that returns the max number from data
+Example call: maxVal()
+*/
+int statisticsLibrary::maxVal(){
+    int maximum=-1;
+    for (int i =0;i<data.size();i++){
+        if (maximum<data[i]){
+            maximum = data[i];
+        }
+    }
+    return maximum;
+}
+
+
+
+/*
+maxVal()
+Method that returns the max number from data
+Example call: maxVal()
+*/
+int statisticsLibrary::minVal(){
+    int minimum=1000000; //initialize with really high number
+    for (int i =0;i<data.size();i++){
+        if (minimum>data[i]){
+            minimum= data[i];
+        }
+    }
+    return minimum;
+}
+
+/*
+writeDatatoFile()
+Method that prints the values from data vector into a png file
+example call: writeDatatoFile()
+
+*/
+void statisticsLibrary::writeDatatoFile(){
+
+    int a;
+    mglGraph *gr = new mglGraph(1000, 2000);
+    gr->Clf(0,0,100);
+    mglData y(data.size());
+    for (int i = 0;i<data.size();i++){
+        y.a[i] = data[i];//transfer data from vector to math gl to be able to plot it
+        gr->Alpha(true);
+        gr->Light(true);
+    }
+    gr->SetRange('x',0,data.size());//x axis adjusted after size of data
+    gr->SetRange('y',minVal(),1.2*maxVal());// y-axis adjusted after max and min element in data
+    gr->Plot(y);
+
+    gr->Title("Plot of data (y-axis) vs element number (x-axis)");
+    gr->SetTicks('x');
+
+    gr->SetTicks('y');            // logarithmic
+    gr->SetTuneTicks(true);
+
+    gr->Box();
+    gr->Label('x', "Element number", 0);
+    gr->Label('y', "Data value", 0);
+    gr->Axis("xy");
+
+    gr->WritePNG("test.png");    // Don't forget to save the result!
+    delete gr;
+
+}
 
 
 statisticsLibrary::~statisticsLibrary()

@@ -17,6 +17,9 @@ class statisticsLibrary
         float variance();
         virtual ~statisticsLibrary();
         void printData();
+        void writeDatatoFile();
+        int maxVal();
+        int minVal();
         void fillRandomData(int n_elements,int minVal,int maxVal);
     protected:
     private:
