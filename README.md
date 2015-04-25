@@ -12,7 +12,7 @@ Clone the project at:
 https://github.com/kirchmann/Kirchmann_CSCI2270_FinalProject.git
 
 This project contains the statisticsLibrary as well as example code, named "howToRun_examples.cpp". Make sure to download mathgl (see dependencies) 
-before trying to run the code.
+before trying to run the code. In the folder sources use the file "howToRun_examples.cpp" to see example code.
 
 
 
