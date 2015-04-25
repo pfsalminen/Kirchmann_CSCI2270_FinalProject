@@ -8,13 +8,19 @@ variance, median, mean, standard deviation and sort the data using bubble or qui
 
 How to Run
 
-This	section	contains	instructions,	
-with	examples,	of how	to	run your program. You	
+
+This section	contains instructions,	
+with	examples, of how to run your program. You	
 should	also	include	a	link	here	
 to the project documentation that you will provide in	
 a	separate	file.
 
 Dependencies
+
+The code is using C++11 compiler. The libraries string, vector, iostream, in addition to these the mathgl library also has to be downloaded and included.
+To install it use the following command in the terminal:
+sudo apt-get install mathgl
+ 
 
 This	section	contains	a	description	of	any	dependencies	that	your	program	requires.	
 For	example,	if	your	program	relies	on	another	third-party	library	that	needs	to	be	
@@ -22,11 +28,10 @@ installed,	you	should	provide	a	description	of	where	to	find	that	library	and
 instructions	for	how	to	install	it.
 
 System	Requirements
+This program is for linux, UBUNTU 64 bit.
 
-Is	your	program	for	Windows,	Mac,	Linux?	Are	there	additional	system	
-requirements	other	than	the	operating	system?
 Group	Members
-List	the	people	who	worked	on	the	project.
+Carl Kirchmann
 
 Contributors
 
@@ -35,4 +40,4 @@ comments,	enhancements,	and	bug	fixes.
 
 Open	issues/bugs
 
-List	any	known	bugs	in	the	project,	and	any	open	enhancement	requests.
+Would like to implement so that you can read a file instead of generating random numbers.
