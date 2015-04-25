@@ -1,6 +1,7 @@
 # Kirchmann_CSCI2270_FinalProject
 
-Project	Summary
+Project	Summary:
+
 The program is made for analysing data and plotting the data. A class containing a vector will store the data.
 If the user does not have data available it can be randomized. The library can find maximum value, minimum value,
 variance, median, mean, standard deviation and sort the data using bubble or quicksort.
@@ -29,17 +30,20 @@ and then enter Y when asked if you want to download it.
 
 
 System	Requirements
+
 This program has only been run on linux, UBUNTU 64 bi in a virtual box.
 
 
 Group	Members
+
 Carl Kirchmann
 
 
 Contributors
-List	the	people	who	were	not	on	the	project	team,	but	may	have	contributed	
-comments,	enhancements,	and	bug	fixes.
+
+No one yet.
 
 Open issues/bugs
+
 No bugs ot issues have been found but further development when it comes to acquiring data is needed. Would like to implement so that you can read a file instead of
  generating random numbers but haven't figured out how to make it read any file. One way is to hardcode it for one type of datafile.
