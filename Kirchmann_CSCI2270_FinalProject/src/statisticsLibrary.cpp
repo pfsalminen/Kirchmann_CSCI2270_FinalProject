@@ -20,11 +20,20 @@ statisticsLibrary::statisticsLibrary(int size)
 
 
 
+
 /*
-Prototype: fillRandomData(int,int,int)
-Method to fill n_elements (extends the vector if it is smaller than n_elements) of the vector with random data, random data is set to be between a mininum and maximum value.
-Example of function call: fillRandomData(10,1,100);
-No pre- or post-conditions
+Function Prototype:
+void statisticsLibrary::fillRandomData(int,int,int)
+
+Function description: Method to fill n_elements (extends the vector if it is smaller than n_elements)
+of the vector with random data, random data is set to be between a mininum and maximum value.
+
+Example:
+statisticsLibrary stat(0);
+stat.fillRandomData(10,1,100);
+
+Pre-conditions: Must have initialized a statisticsLibrary object, n_elements is a non-negative integer
+Post-conditions: n_elements first elements in data vector now filled with numbers between minVal and maxVal
 */
 void statisticsLibrary::fillRandomData(int n_elements, int minVal,int maxVal){
     float randVal;
@@ -41,16 +50,44 @@ void statisticsLibrary::fillRandomData(int n_elements, int minVal,int maxVal){
 
 }
 
+
 /*
-Method to print data in vector "data"
-Pre-conditon: Must have created a statisticsLibrary object and inserted values to datavector
+Function prototype:
+void statisticsLibrary::printData()
+
+Function description:
+Method to print all data in vector called data.
+
+Example:
+statisticsLibrary stat;
+stat.fillRandomData(100,1,100);
+stat.printData();
+
+Pre-conditions: Must create a statisticsLibrary object
+Post-conditions: Prints all values in vector data
 */
+
 void statisticsLibrary::printData(){
     for (int i = 0;i<data.size();i++){
         cout<<data[i]<<endl;
     }
 }
 
+/*
+Function prototype:
+float statisticsLibrary::mean()
+
+Function description:
+Method to get mean of data.
+
+Example:
+statisticsLibrary stat;
+stat.fillRandomData(100,1,100);
+stat.mean();
+
+Pre-conditions: Must create a statisticsLibrary object
+Post-conditions: Returns float mean
+*/
 float statisticsLibrary::mean(){
     float sum =0;
     int sizeOfData = data.size();
@@ -61,14 +98,27 @@ float statisticsLibrary::mean(){
 }
 
 
+
 /*
-Method that gives the user the option to sort the data by using two different sorting algorithms
-Pre-condition: user must have called the constructor and initialized the vector, the user must also have filled it with values
-since there is nothing to sort otherwise.
+Function prototype:
+void statisticsLibrary::sortDataMinToMax()
+
+Function description:
+Method to sort all data in vector called data from lowest to highest, the user chooses which method
+that is to be used to do the sorting, quicksort or bubblesort.
+
+Example:
+statisticsLibrary stat;
+stat.fillRandomData(100,1,100);
+stat.sortDataMinToMax();
+1
+
+Pre-conditions: Must create a statisticsLibrary object
+Post-conditions: All data will be sorted from lowest to highest number
 */
 void statisticsLibrary::sortDataMinToMax(){
     int input;
-    cout<<"Use bubble to sort (1) or blabla (2)?"<<endl;
+    cout<<"Use bubble to sort (1) or quicksort(2)?"<<endl;
     cin >> input;
     switch (input)
     {
@@ -78,18 +128,28 @@ void statisticsLibrary::sortDataMinToMax(){
             break;
 
         case 2:
-            //other kind of sort
+            //quicksort
+            quickSort(data[0],data[data.size()-1]);
             break;
-
     }
 }
 
 
 /*
-bubblesort()
-Method that sorts data to be from low to high in data vector.
-bubbleSort()
-Pre-condition: Must have data to sort before calling bubbleSort
+Function prototype:
+void statisticsLibrary::sortDataMinToMax()
+
+Function description:
+Method to sort all data in vector called data from lowest to highest using the bubblesort algorithm
+
+Example:
+statisticsLibrary stat;
+stat.fillRandomData(100,1,100);
+stat.sortDataMinToMax();
+1
+
+Pre-conditions: Must create a statisticsLibrary object
+Post-conditions: All data will be sorted from lowest to highest number
 */
 void statisticsLibrary::bubbleSort(){ //n is the size of the array
     float temp;
@@ -104,9 +164,21 @@ void statisticsLibrary::bubbleSort(){ //n is the size of the array
         }
     }
 }
-
 /*
-R
+Function prototype:
+void statisticsLibrary::sortDataMinToMax()
+
+Function description:
+Method to sort all data in vector called data from lowest to highest, using the quicksort algorithm
+
+Example:
+statisticsLibrary stat;
+stat.fillRandomData(100,1,100);
+stat.sortDataMinToMax();
+2
+
+Pre-conditions: Must create a statisticsLibrary object
+Post-conditions: All data will be sorted from lowest to highest number
 */
 void statisticsLibrary::quickSort(float left, float right){
      float i = left;
@@ -133,6 +205,23 @@ void statisticsLibrary::quickSort(float left, float right){
 }
 
 
+
+/*
+Function prototype:
+float statisticsLibrary::standardDeviation()
+
+Function description:
+Finds the standard deviation of data in vector.
+
+Example:
+statisticsLibrary stat;
+stat.fillRandomData(100,1,100);
+float std = stat.standardDeivation();
+cout<<std<<endl;
+
+Pre-conditions: Must create a statisticsLibrary object
+Post-conditions: Returns a float that is the standard deviation of the data collection.
+*/
 float statisticsLibrary::standardDeviation(){
     float meanVal=mean();
     float sum_deviation=0.0;
@@ -146,10 +235,22 @@ float statisticsLibrary::standardDeviation(){
 
 
 /*
-median()
-Method that returns the median of data in vector.
-Example call: median()
-Pre-condition: Must have inserted data and also sorted it using any sorting algorithm
+Function prototype:
+float statisticsLibrary::median()
+
+Function description:
+Method to get the median of data.
+
+Example:
+statisticsLibrary stat;
+stat.fillRandomData(100,1,100);
+stat.sortDataMinToMax();
+1 //user input when running code
+float meanVal = stat.mean();
+
+Pre-conditions: Must create a statisticsLibrary object and must have sorted it
+Post-conditions: Returns the value in the middle of the data collection, if number of elements is not divisible by 2 it
+returns the mean of the two values.
 */
 float statisticsLibrary::median(){
     //have to sort it first, have a boolean sorted?
@@ -164,12 +265,23 @@ float statisticsLibrary::median(){
 }
 
 /*
-maxVal()
-Method that returns the max number from data
-Example call: maxVal()
+Function prototype:
+float statisticsLibrary::maxVal()
+
+Function description:
+Method to sort find the maximum value in data vector.
+
+Example:
+statisticsLibrary stat;
+stat.fillRandomData(100,1,100);
+float maxVal= stat.maxVal();
+cout<<maxVal<<endl;
+
+Pre-conditions: Must create a statisticsLibrary object and have >1 element in it
+Post-conditions: Returns a float with the highest value in the data vector. Returns -1 if the vector is empty
 */
-int statisticsLibrary::maxVal(){
-    int maximum=-1;
+float statisticsLibrary::maxVal(){
+    float maximum=-1;
     for (int i =0;i<data.size();i++){
         if (maximum<data[i]){
             maximum = data[i];
@@ -181,11 +293,22 @@ int statisticsLibrary::maxVal(){
 
 
 /*
-maxVal()
-Method that returns the max number from data
-Example call: maxVal()
+Function prototype:
+float statisticsLibrary::minVal()
+
+Function description:
+Method to sort find the minimum value in data vector.
+
+Example:
+statisticsLibrary stat;
+stat.fillRandomData(100,1,100);
+float minVal= stat.minVal();
+cout<<maxVal<<endl;
+
+Pre-conditions: Must create a statisticsLibrary object and have >1 element in it
+Post-conditions: Returns a float with the highest value in the data vector. Returns 1000000 if the vector is empty
 */
-int statisticsLibrary::minVal(){
+float statisticsLibrary::minVal(){
     int minimum=1000000; //initialize with really high number
     for (int i =0;i<data.size();i++){
         if (minimum>data[i]){
@@ -195,6 +318,22 @@ int statisticsLibrary::minVal(){
     return minimum;
 }
 
+
+/*
+Function prototype:
+void statisticsLibrary::writeDataToFile()
+
+Function description:
+Method to print data and write to a png file.
+
+Example:
+statisticsLibrary stat;
+stat.fillRandomData(100,1,100);
+stat.writeDataToFile():
+
+Pre-conditions: Must create a statisticsLibrary object
+Post-conditions: Creates a png file in the same directory as the code
+*/
 /*
 writeDatatoFile()
 Method that prints the values from data vector into a png file
@@ -232,8 +371,21 @@ void statisticsLibrary::writeDatatoFile(){
 
 }
 
+/*
+Function prototype:
+statisticsLibrary::~statisticsLibrary()
 
+Function description:
+Method to destroy statisticsLibrary object.
+
+Example:
+c++ calls this function as soon as we run out of scope
+
+Pre-conditions: Must create a statisticsLibrary object and have >1 element in it
+Post-conditions: statisticsLibrary object memory is deallocated
+*/
 statisticsLibrary::~statisticsLibrary()
 {
     //dtor
+
 }

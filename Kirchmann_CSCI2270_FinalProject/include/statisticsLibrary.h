@@ -9,7 +9,6 @@ class statisticsLibrary
     public:
         vector<float> data;
         statisticsLibrary(int dataSize);
-        void randomNumbers(int low_limit,int upper_limit);
         void sortDataMinToMax();
         float mean();
         float median();
@@ -18,8 +17,8 @@ class statisticsLibrary
         virtual ~statisticsLibrary();
         void printData();
         void writeDatatoFile();
-        int maxVal();
-        int minVal();
+        float maxVal();
+        float minVal();
         void fillRandomData(int n_elements,int minVal,int maxVal);
     protected:
     private:

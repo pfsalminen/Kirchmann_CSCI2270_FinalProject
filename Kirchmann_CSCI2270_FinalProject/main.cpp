@@ -16,6 +16,7 @@ int main()
     //stat.sortDataMinToMax();
     stat.printData();
     stat.writeDatatoFile();
+    stat.~statisticsLibrary();
     //stat.printData();
     return 0;
 }
