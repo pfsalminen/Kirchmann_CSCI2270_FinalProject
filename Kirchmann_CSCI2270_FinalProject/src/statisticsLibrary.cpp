@@ -1,24 +1,29 @@
-#include "vector"
+#include "vector" //used to store data
 #include <iostream>
-#include<math.h>
+#include <math.h> //used for random number generator
 #include "statisticsLibrary.h"
-#include <time.h>
-#include <mgl2/mgl.h>
+#include <time.h> //used for random number generator
+#include <mgl2/mgl.h>//used to write plot to file
 using namespace std;
 
 /*
-statisticsLibrary(int)
-Constructor, creates a vector of floats of input size
-Example of function call: statisticsLibrary(10) input has to be nonnegative
-No pre or post conditions
+Function prototype:
+void statisticsLibrary::statisticsLibrary(int)
+
+Function description:
+Method to create a statisticsLibrary object.
+
+Example:
+statisticsLibrary stat(0);
+
+Pre-conditions:
+Post-conditions: Has a statisticsLibrary object that can be filled with data.
 */
 statisticsLibrary::statisticsLibrary(int size)
 {
     //ctor
     vector<float> data (size);
 }
-
-
 
 
 /*
@@ -321,7 +326,7 @@ float statisticsLibrary::minVal(){
 
 /*
 Function prototype:
-void statisticsLibrary::writeDataToFile()
+void statisticsLibrary::writeDataToFile(char*)
 
 Function description:
 Method to print data and write to a png file.
@@ -329,18 +334,12 @@ Method to print data and write to a png file.
 Example:
 statisticsLibrary stat;
 stat.fillRandomData(100,1,100);
-stat.writeDataToFile():
+stat.writeDataToFile("filename.png"):
 
-Pre-conditions: Must create a statisticsLibrary object
+Pre-conditions: Must create a statisticsLibrary object, must include .png in filename
 Post-conditions: Creates a png file in the same directory as the code
 */
-/*
-writeDatatoFile()
-Method that prints the values from data vector into a png file
-example call: writeDatatoFile()
-
-*/
-void statisticsLibrary::writeDatatoFile(){
+void statisticsLibrary::writeDatatoFile(char *fileName){
 
     int a;
     mglGraph *gr = new mglGraph(1000, 2000);
@@ -366,10 +365,39 @@ void statisticsLibrary::writeDatatoFile(){
     gr->Label('y', "Data value", 0);
     gr->Axis("xy");
 
-    gr->WritePNG("test.png");    // Don't forget to save the result!
+    gr->WritePNG(fileName);    // Don't forget to save the result!
     delete gr;
 
 }
+
+
+/*
+Function prototype:
+float statisticsLibrary::variance()
+
+Function description:
+Method to sort find the variance of data vector.
+
+Example:
+statisticsLibrary stat;
+stat.fillRandomData(100,1,100);
+float variance= stat.variance();
+cout<<variance<<endl;
+
+Pre-conditions: Must create a statisticsLibrary object and have >1 element in it
+Post-conditions: Returns a float with the variance
+*/
+float statisticsLibrary::variance(){
+   float meanVal = mean();
+
+        float temp = 0;
+        for(int i = 0; i < data.size(); i++)
+        {
+             temp += (data[i] - meanVal) * (data[i] - meanVal) ;
+        }
+        return temp / data.size();
+}
+
 
 /*
 Function prototype:
