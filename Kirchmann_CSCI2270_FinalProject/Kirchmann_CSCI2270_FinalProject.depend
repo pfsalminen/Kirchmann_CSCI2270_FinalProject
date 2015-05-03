@@ -45,3 +45,22 @@
 	<blitz/array.h>
 	<windows.h>
 
+1430683207 source:/home/paul/gits/Kirchmann_CSCI2270_FinalProject/Kirchmann_CSCI2270_FinalProject/src/statisticsLibrary.cpp
+	"vector"
+	<iostream>
+	<math.h>
+	"statisticsLibrary.h"
+	<time.h>
+	<mgl2/mgl.h>
+
+1430683209 /home/paul/gits/Kirchmann_CSCI2270_FinalProject/Kirchmann_CSCI2270_FinalProject/include/statisticsLibrary.h
+	<vector>
+	<iostream>
+
+1430683206 source:/home/paul/gits/Kirchmann_CSCI2270_FinalProject/Kirchmann_CSCI2270_FinalProject/src/main-pfsalminen.cpp
+	<statisticsLibrary.h>
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+

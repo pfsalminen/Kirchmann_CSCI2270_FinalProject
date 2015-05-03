@@ -1,3 +1,6 @@
+/*This file has been modified by pfsalminen to include the addDataPoint function
+which is used to input data from a file*/
+
 #include "vector" //used to store data
 #include <iostream>
 #include <math.h> //used for random number generator
@@ -25,6 +28,19 @@ statisticsLibrary::statisticsLibrary(int size)
     vector<float> data (size);
 }
 
+/*This function is part of the contribution by pfsalminen.
+This runs automatically from main if a data file is going to
+be used instead of random numbers. It takes in the data point,
+and the location in the vector. Since the program was initially
+built to graph data vs. element number, this contribution is build
+to take in a list of data points, each point on its own line.
+It will not take in x, y points*/
+void statisticsLibrary::addDataPoint(float num, int i) {
+    if (i>=data.size())
+        data.push_back(num);
+    else
+        data[i] = num;
+}
 
 /*
 Function Prototype:
@@ -260,7 +276,6 @@ returns the mean of the two values.
 float statisticsLibrary::median(){
     //have to sort it first, have a boolean sorted?
     //force to sort here even though it has been sorted?
-    float median;
     int sizeOfData = data.size();
     if ((sizeOfData% 2) == 0) {
         return (data[sizeOfData/2] + data[(sizeOfData/2) - 1])/2;

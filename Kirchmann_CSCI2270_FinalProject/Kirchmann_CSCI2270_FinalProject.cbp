@@ -38,7 +38,7 @@
 			<Add library="mgl" />
 		</Linker>
 		<Unit filename="include/statisticsLibrary.h" />
-		<Unit filename="main.cpp" />
+		<Unit filename="src/main-pfsalminen.cpp" />
 		<Unit filename="src/statisticsLibrary.cpp" />
 		<Extensions>
 			<code_completion />

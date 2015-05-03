@@ -9,6 +9,7 @@ class statisticsLibrary
     public:
         vector<float> data;
         statisticsLibrary(int dataSize);
+		void addDataPoint(float num,int i);
         void sortDataMinToMax();
         float mean();
         float median();
